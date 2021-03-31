@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"github.com/beekter/hw1_tree/src/tree"
 	"io"
 	"os"
-	"path/filepath"
-	"strings"
 )
 
 func main() {
@@ -19,4 +17,8 @@ func main() {
 	if err != nil {
 		panic(err.Error())
 	}
+}
+
+func dirTree(out io.Writer, path string, printFiles bool) error {
+	return tree.Print(out, path, printFiles)
 }
